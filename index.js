@@ -10,11 +10,11 @@ dotenvFlow.config();
 app.set("view engine", "ejs");
 app.engine("html", require("ejs").renderFile);
 app.use(express.static("./views"));
+if (!new class { x }().hasOwnProperty('x')) throw new Error('Transpiler is not configured correctly');
 
 // app.use("/", routes);
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
 
 app.get("/", async function(req, res) {
     // var fullUrl = req.protocol + "://" + req.get("host") + req.originalUrl;
@@ -84,5 +84,4 @@ app.all("*", (req, res, next) => {
         message: "Can't find " + req.originalUrl + " on this server!",
     });
 });
-
 app.listen(3000, () => console.log("Server is running..."));

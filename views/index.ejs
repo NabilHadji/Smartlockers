@@ -22,21 +22,147 @@
                 <%= site.cgdv %>
             </div>
         </div>
-        <div class="content">
+
+        <div id="equip" class="content">
+            <h1 style="text-align: center;">notres equipe</h1>
+            <div class="row">
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.workers[1] %>
+                    </p>
+                </div>
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.workers[2] %>
+                    </p>
+                </div>
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.workers[3] %>
+                    </p>
+                </div>
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.workers[4] %>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.workers[5] %>
+                    </p>
+                </div>
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.workers[6] %>
+                    </p>
+                </div>
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.workers[7] %>
+                    </p>
+                </div>
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.workers[8] %>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.workers[9] %>
+                    </p>
+                </div>
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.workers[10] %>
+                    </p>
+                </div>
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.workers[11] %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="produits" class="content">
+            <h1 style="text-align: center;">Nos Gammes</h1>
+            <div class="row">
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.quotations_products[1] %>
+                    </p>
+                </div>
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.quotations_products[2]%>
+                    </p>
+                </div>
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.quotations_products[3] %>
+                    </p>
+                </div>
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.quotations_products[4]%>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.quotations_products[5]%>
+                    </p>
+                </div>
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.quotations_products[6] %>
+                    </p>
+                </div>
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.quotations_products[7] %>
+                    </p>
+                </div>
+                <div class="col-lg 4">
+                    <p>
+                        <%= site.quotations_products[8]%>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="scenario" class="content">
+            <h1 style="text-align: center;">Scenario cas d'usage</h1>
             <div class="row">
                 <div class="col-lg 6">
                     <p>
-                        <%= site.baseline %>
+                        <%= site.webcontents[1] %>
                     </p>
                 </div>
                 <div class="col-lg 6">
                     <p>
-                        <%= site.name %>
+                        <%= site.webcontents[1]%>
                     </p>
                 </div>
-
+            </div>
+            <div class="row">
+                <div class="col-lg 6">
+                    <p>
+                        <%= site.webcontents[2]%>
+                    </p>
+                </div>
+                <div class="col-lg 6">
+                    <p>
+                        <%= site.webcontents[2] %>
+                    </p>
+                </div>
             </div>
         </div>
+
     </main>
 
     <footer>
@@ -45,3 +171,37 @@
 </body>
 
 </html>
+
+<script>
+    let nav1 = document.getElementById("nav1");
+    let nav2 = document.getElementById("nav2");
+    let nav3 = document.getElementById("nav3");
+    let equip = document.getElementById("equip");
+    let produits = document.getElementById("produits");
+    let scenario = document.getElementById("scenario");
+    nav1.addEventListener("click", () => {
+        if (getComputedStyle(equip).display != "none") {
+            equip.style.display = "none";
+        } else {
+            equip.style.display = "block";
+        }
+    })
+
+    function nav() {
+        if (getComputedStyle(produits).display != "none") {
+            produits.style.display = "none";
+        } else {
+            produits.style.display = "block";
+        }
+    };
+
+    function navv() {
+        if (getComputedStyle(scenario).display != "none") {
+            scenario.style.display = "none";
+        } else {
+            scenario.style.display = "block";
+        }
+    };
+    nav2.onclick = nav;
+    nav3.onclick = navv;
+</script>
