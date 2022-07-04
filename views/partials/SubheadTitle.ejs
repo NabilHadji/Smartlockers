@@ -1,0 +1,71 @@
+<template>
+  <h2 class="text-center" :style="{ color: $store.state.colors.Color3 }">
+    <span
+      class="sub-title"
+      v-if="subtitle"
+      :style="{
+        color: $store.state.colors.Color3,
+      }"
+      >{{ subtitle }}</span
+    >
+  </h2>
+</template>
+<script>
+export default {
+  name: "SubheadTitle",
+  props: {
+    subtitle: String,
+  },
+  data() {
+    return {};
+  },
+  computed: {},
+  mounted() {
+    let r = document.querySelector(":root");
+    r.style.setProperty(
+      "--h2-background-color",
+      this.$store.state.colors.Color3
+    );
+  },
+};
+</script>
+
+<style scoped>
+.sub-title {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 4px 82px;
+  position: relative;
+}
+
+.sub-title:before,
+.sub-title:after {
+  top: 15px;
+  content: "";
+  height: 3px;
+  width: 75px;
+  position: absolute;
+  background-color: var(--h2-background-color);
+}
+
+.sub-title:before {
+  left: 0;
+}
+
+.sub-title:after {
+  right: 0;
+  display: none;
+}
+
+.text-center .sub-title:after {
+  display: block;
+}
+
+h2 {
+  color: inherit;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.333;
+  padding: 10px 0px 20px;
+}
+</style>

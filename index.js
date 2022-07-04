@@ -69,13 +69,22 @@ app.get("/magic", function(req, res) {
     res.render("pharmalockers/index.html");
 });
 
-app.get("/equipe", function(req, res) {
+app.get("/contacts", function(req, res) {
     var fullUrl = req.protocol + "://" + req.get("host") + req.originalUrl;
     var content = {};
     content.title = "multisite essai";
 
     console.log(req.get("host"));
-    res.render("nous.ejs", content);
+    res.render("contact.ejs", content);
+});
+
+app.get("/engagements", function(req, res) {
+    var fullUrl = req.protocol + "://" + req.get("host") + req.originalUrl;
+    var content = {};
+    content.title = "multisite essai";
+
+    console.log(req.get("host"));
+    res.render("engagement.ejs", content);
 });
 
 app.all("*", (req, res, next) => {
